@@ -1,3 +1,41 @@
+## これなに？
+
+[aws-autostop](https://github.com/yasutaka-kato/aws-autostop)というOSSを改造して、ついてるタグにおうじて自動的に起動/停止するLambdaです
+
+## デプロイ方法
+
+CloudShellから以下のコマンドを実行する
+
+```
+$ git clone https://github.com/yasutaka-kato/aws-autostop
+$ cd aws-autostop
+$ sam build
+$ sam deploy --guided
+  Stack Name [sam-app]: aws-autostop
+  AWS Region [ap-northeast-1]: 
+  Parameter TimeZone [UTC]: Asia/Tokyo
+  Parameter SlackWebhookUrl []: 
+  Confirm changes before deploy [y/N]: 
+  Allow SAM CLI IAM role creation [Y/n]: 
+  #Preserves the state of previously provisioned resources when an operation fails
+  Disable rollback [y/N]: 
+  Save arguments to configuration file [Y/n]: 
+  SAM configuration file [samconfig.toml]: 
+  SAM configuration environment [default]: 
+```
+
+消すときは同じディレクトリから
+
+```
+$ sam delete
+```
+
+## 分かってる問題点
+
+(今のところなし)
+
+# 以下は元のドキュメントです
+
 # AWS AutoStop
 
 Stop/start resources automatically depends on tag.
